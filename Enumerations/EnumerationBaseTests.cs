@@ -311,14 +311,14 @@ public class EnumerationBaseTests
     }
 
     [Fact]
-    public void FromValue_ShouldReturnProvidedDefaultValueWhenGivenValueIsNotMatched()
+    public void FromValueOrDefault_ShouldReturnProvidedDefaultValueWhenGivenValueIsNotMatched()
     {
         //ARRANGE
         var testValue = String.Empty;
         var defaultTestValue = TestEnumWithStringKey.Option1;
 
         //ACT
-        var result = TestEnumWithStringKey.ParseFromValue(testValue, defaultTestValue);
+        var result = TestEnumWithStringKey.ParseFromValueOrDefault(testValue, defaultTestValue);
 
         //ASSERT
         result.ShouldBeOfType<TestEnumWithStringKey>();
